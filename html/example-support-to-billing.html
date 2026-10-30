@@ -1,0 +1,37 @@
+<!doctype html><meta charset=utf-8><title>Example: Support Agent to Billing Agent</title><body style='font-family:sans-serif;max-width:760px;margin:auto'><h1>Example: Support Agent to Billing Agent</h1>
+<p>All names and values are fictional.</p>
+<pre class='code'>
+{
+  &quot;handoff_id&quot;: &quot;HO-20261102-refund-check&quot;,
+  &quot;from_agent&quot;: &quot;support-desk-bot&quot;,
+  &quot;to_agent&quot;: &quot;billing-bot&quot;,
+  &quot;timestamp&quot;: &quot;2026-11-02T10:15:00-07:00&quot;,
+  &quot;goal&quot;: &quot;Decide whether order #A-1043 at Pinecone Candle Co. qualifies for a partial refund.&quot;,
+  &quot;context_summary&quot;: &quot;Customer &#x27;Customer 1&#x27; reports a cracked jar on arrival with a photo. Policy allows refunds within 30 days; order is 9 days old.&quot;,
+  &quot;artifacts&quot;: [
+    {
+      &quot;name&quot;: &quot;ticket&quot;,
+      &quot;location&quot;: &quot;helpdesk://tickets/5521&quot;,
+      &quot;note&quot;: &quot;fictional&quot;
+    }
+  ],
+  &quot;next_action&quot;: &quot;Check order total and draft a refund proposal for human approval.&quot;,
+  &quot;blockers&quot;: [],
+  &quot;owner&quot;: &quot;billing-bot&quot;,
+  &quot;priority&quot;: &quot;normal&quot;,
+  &quot;quiet_hours_respect&quot;: true,
+  &quot;approval_needed&quot;: true,
+  &quot;approval_category&quot;: &quot;money&quot;,
+  &quot;cost_so_far&quot;: {
+    &quot;amount&quot;: 0.04,
+    &quot;currency&quot;: &quot;USD&quot;
+  },
+  &quot;decisions_ref&quot;: &quot;decisions.md#2026-11-02&quot;,
+  &quot;lessons_ref&quot;: &quot;lessons.md&quot;
+}
+</pre>
+<h2>Why this record works</h2>
+<p>- Next action is one verb-first step.</p>
+<p>- Every blocker has an owner.</p>
+<p>- approval_needed is set when the next step touches money, legal, deletion or external messages.</p>
+<p>&gt; Harlo: operational templates; no guarantee of agent reliability or safety; keep a human approval gate for money, legal, deletion and external messages.</p></body>

@@ -1,0 +1,17 @@
+<!doctype html><meta charset=utf-8><title>Template: Escalation</title><body style='font-family:sans-serif;max-width:760px;margin:auto'><h1>Template: Escalation</h1>
+<p>Use when a blocker passes its wait time or a risk appears.</p>
+<pre class='code'>
+ESCALATION  HO-YYYYMMDD-slug
+Severity: S1 | S2 | S3
+Trigger: &lt;what happened&gt;
+Tried: &lt;what the agent already did&gt;
+Impact if ignored: &lt;cost / deadline&gt;
+Needs: &lt;decision or approval&gt;  from: &lt;role&gt;
+Hold during quiet hours: yes|no
+Re-escalate to: &lt;role&gt; if no answer by &lt;time&gt;
+</pre>
+<h2>Before escalating</h2>
+<p>- Run the linter (Pro) or check state files by hand.</p>
+<p>- Confirm the blocker is in blocked-on-human.md with an owner.</p>
+<p>- One bundled escalation per run, not one message per issue.</p>
+<p>&gt; Harlo: operational templates; no guarantee of agent reliability or safety; keep a human approval gate for money, legal, deletion and external messages.</p></body>

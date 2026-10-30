@@ -1,0 +1,38 @@
+<!doctype html><meta charset=utf-8><title>Example: Research Agent to Writer Agent</title><body style='font-family:sans-serif;max-width:760px;margin:auto'><h1>Example: Research Agent to Writer Agent</h1>
+<p>All names and values are fictional.</p>
+<pre class='code'>
+{
+  &quot;handoff_id&quot;: &quot;HO-20261103-blog-brief&quot;,
+  &quot;from_agent&quot;: &quot;research-bot&quot;,
+  &quot;to_agent&quot;: &quot;writer-bot&quot;,
+  &quot;timestamp&quot;: &quot;2026-11-03T08:00:00Z&quot;,
+  &quot;goal&quot;: &quot;Ship a 900-word draft on composting for the fictional Fernbrook Garden blog.&quot;,
+  &quot;context_summary&quot;: &quot;Collected 5 sources and an outline with 4 sections. Tone guide is in artifacts.&quot;,
+  &quot;artifacts&quot;: [
+    {
+      &quot;name&quot;: &quot;outline&quot;,
+      &quot;location&quot;: &quot;docs/outline-compost.md&quot;
+    },
+    {
+      &quot;name&quot;: &quot;sources&quot;,
+      &quot;location&quot;: &quot;docs/sources.md&quot;
+    }
+  ],
+  &quot;next_action&quot;: &quot;Write the first draft from the outline and log open questions.&quot;,
+  &quot;blockers&quot;: [],
+  &quot;owner&quot;: &quot;writer-bot&quot;,
+  &quot;priority&quot;: &quot;low&quot;,
+  &quot;quiet_hours_respect&quot;: true,
+  &quot;approval_needed&quot;: false,
+  &quot;approval_category&quot;: &quot;none&quot;,
+  &quot;cost_so_far&quot;: {
+    &quot;amount&quot;: 0.12,
+    &quot;currency&quot;: &quot;USD&quot;
+  }
+}
+</pre>
+<h2>Why this record works</h2>
+<p>- Next action is one verb-first step.</p>
+<p>- Every blocker has an owner.</p>
+<p>- approval_needed is set when the next step touches money, legal, deletion or external messages.</p>
+<p>&gt; Harlo: operational templates; no guarantee of agent reliability or safety; keep a human approval gate for money, legal, deletion and external messages.</p></body>

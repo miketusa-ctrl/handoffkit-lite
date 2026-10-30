@@ -1,0 +1,28 @@
+<!doctype html><meta charset=utf-8><title>Template: Agent-to-Agent Handoff</title><body style='font-family:sans-serif;max-width:760px;margin:auto'><h1>Template: Agent-to-Agent Handoff</h1>
+<p>Use when one agent passes work to another agent.</p>
+<pre class='code'>
+handoff_id: HO-YYYYMMDD-slug
+from_agent:
+to_agent:
+timestamp:
+goal: &lt;one sentence: what done looks like&gt;
+context_summary: &lt;what was done this run, what changed, 3–6 lines&gt;
+artifacts:
+  - name:      location:
+next_action: &lt;verb-first, one step the receiver does first&gt;
+blockers:
+  - description:      owner:
+owner: &lt;who owns the next action&gt;
+priority: normal
+quiet_hours_respect: true
+approval_needed: false
+cost_so_far: {amount: 0, currency: USD}
+decisions_ref: decisions.md#
+lessons_ref: lessons.md#
+</pre>
+<h2>Sender checklist</h2>
+<p>- [ ] State files updated (handoff.md, decisions.md, run-log.md)</p>
+<p>- [ ] Next action is a single concrete step</p>
+<p>- [ ] Blockers each have an owner</p>
+<p>- [ ] No secrets in the record</p>
+<p>&gt; Harlo: operational templates; no guarantee of agent reliability or safety; keep a human approval gate for money, legal, deletion and external messages.</p></body>

@@ -1,0 +1,18 @@
+<!doctype html><meta charset=utf-8><title>Handoff Record Schema</title><body style='font-family:sans-serif;max-width:760px;margin:auto'><h1>Handoff Record Schema</h1>
+<p>`handoff.schema.json` (JSON Schema 2020-12) defines one handoff record.</p>
+<h2>Required fields</h2>
+<p>- `handoff_id` — `HO-YYYYMMDD-short-slug`</p>
+<p>- `from_agent` and exactly one of `to_agent` / `to_human`</p>
+<p>- `timestamp` — ISO 8601 with offset</p>
+<p>- `goal`, `context_summary`, `next_action` — plain sentences; next action starts with a verb</p>
+<p>- `owner` — who is accountable for the next action</p>
+<p>- `priority` — low / normal / high / urgent</p>
+<p>- `quiet_hours_respect` — true if the receiver should wait for working hours</p>
+<p>- `approval_needed` — true when the next step touches money, legal, deletion or external messages</p>
+<h2>Optional fields</h2>
+<p>`artifacts[]` (name, location, note), `blockers[]` (description, owner, since), `approval_category`, `cost_so_far` (amount, currency), `decisions_ref`, `lessons_ref`.</p>
+<h2>Rules of thumb</h2>
+<p>- Summaries say what changed, not the whole history; link to decisions.md for why.</p>
+<p>- Every blocker has an owner. A blocker with no owner is just a complaint.</p>
+<p>- Never paste keys, tokens or personal data into a record; reference where they live instead.</p>
+<p>&gt; Harlo: operational templates; no guarantee of agent reliability or safety; keep a human approval gate for money, legal, deletion and external messages.</p></body>

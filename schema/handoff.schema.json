@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harlo.example/handoff.schema.json",
+  "title": "Harlo Handoff Record",
+  "description": "One record per handoff between agents or from an agent to a human. operational templates; no guarantee of agent reliability or safety; keep a human approval gate for money, legal, deletion and external messages.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "handoff_id",
+    "from_agent",
+    "timestamp",
+    "goal",
+    "context_summary",
+    "next_action",
+    "owner",
+    "priority",
+    "quiet_hours_respect",
+    "approval_needed"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "to_agent"
+      ],
+      "not": {
+        "required": [
+          "to_human"
+        ]
+      }
+    },
+    {
+      "required": [
+        "to_human"
+      ],
+      "not": {
+        "required": [
+          "to_agent"
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "handoff_id": {
+      "type": "string",
+      "pattern": "^HO-[0-9]{8}-[A-Za-z0-9-]+$"
+    },
+    "from_agent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_agent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_human": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2})?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "location"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "description",
+          "owner"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "since": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "normal",
+        "high",
+        "urgent"
+      ]
+    },
+    "quiet_hours_respect": {
+      "type": "boolean"
+    },
+    "approval_needed": {
+      "type": "boolean"
+    },
+    "approval_category": {
+      "type": "string",
+      "enum": [
+        "none",
+        "money",
+        "legal",
+        "deletion",
+        "external_message",
+        "other"
+      ]
+    },
+    "cost_so_far": {
+      "type": "object",
+      "required": [
+        "amount",
+        "currency"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "decisions_ref": {
+      "type": "string"
+    },
+    "lessons_ref": {
+      "type": "string"
+    }
+  }
+}
