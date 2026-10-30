@@ -10,10 +10,10 @@ Free starter files so multi-agent and long-running agent systems stop dropping c
 - Markdown + HTML
 
 ## Paid tiers
-- **Pro ($29)** — patterns, escalation matrix, AGENTS.md / CLAUDE.md / .cursor snippets, stdlib linter, 6 examples, guide (MD/HTML/DOCX/PDF)
-- **Team ($69)** — Pro + fleet-ops playbook outline, routine-slot planner, Notion import, multi-client license
+- **[Pro — $29](https://payhip.com/b/hOH6I)** — patterns, escalation matrix, AGENTS.md / CLAUDE.md / .cursor snippets, stdlib linter, 6 examples, guide (MD/HTML/DOCX/PDF)
+- **[Team — $69](https://payhip.com/b/CiA0E)** — Pro + fleet-ops playbook outline, routine-slot planner, Notion import, multi-client license
 
-Payhip (Harlo): links added after listing goes live.
+Shop: [payhip.com/PromptPackShop](https://payhip.com/PromptPackShop)
 
 ## Safety
 Operational templates; no guarantee of agent reliability or safety; keep a human approval gate for money, legal, deletion and external messages.
